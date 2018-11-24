@@ -62,26 +62,19 @@
   <!-- Cover -->
   <!-- Intro -->
   <div class="py-5" style="background-image: url(&quot;assets/restaurant/cover_light_3.jpg&quot;);" id="location">
-    <div id="map" style="width: 705px; height: 375px"></div>
-  </div>
-  <!-- intro-2 -->
-  <div class="py-5" style="background-image: url(&quot;assets/restaurant/cover_light_3.jpg&quot;);">
-    <div class="container">
-      <div class="row my-5 bg-primary">
-        <div class="p-4 col-md-12">
-          <a class="btn btn-outline-light" href="site2.html"><img class="img-fluid d-block" src="mapzoom_1.jpg" style=""></a>
-        </div>
-      </div>
-    </div>
+    <a class="btn btn-outline-light w-100" href="site2.html">
+      <div id="map" style="width: 705px; height: 375px" class="text-center w-100"></div>
+    </a>
   </div>
   <!-- Gallery -->
   <div class="">
-    <div class="container-fluid" id="nearby">
-      <iframe class="airtable-embed" src="https://airtable.com/embed/shrEkrWgzWUSuezk1?backgroundColor=green&amp;viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    <div class="container-fluid h-100" id="nearby">
+      <h2 class="text-primary">Bärige people next to you</h2>
+      <iframe class="airtable-embed" src="https://airtable.com/embed/shrEkrWgzWUSuezk1?backgroundColor=green&amp;viewControls=on" frameborder="0" onmousewheel="" width="100%" height="1033" style="background: transparent; border: 1px solid #ccc;"></iframe>
     </div>
   </div>
   <!-- Menu -->
-  <div class="py-5 text-center" style="background-image: url(&quot;assets/restaurant/cover_light_4.jpg&quot;);" id="chat">
+  <div class="py-5 text-center" id="chat" style="background-image: url(&quot;assets/restaurant/cover_light_4.jpg&quot;);">
     <div class="container">
       <div class="row p-4 bg-aquamarine animate-in-down">
         <div class="col-md-12">
@@ -135,7 +128,7 @@
     </div>
   </div>
   <!-- Carousel reviews -->
-  <div class="py-5 text-center photo-overlay" style="background-image: url(&quot;assets/restaurant/testimonal_background_light.jpg&quot;);" id="calendar">
+  <div class="py-5 text-center photo-overlay" id="calendar" style="background-image: url(&quot;assets/restaurant/testimonal_background_light.jpg&quot;);">
     <iframe class="airtable-embed" src="https://airtable.com/embed/shrEApZpq4nPw7Faq?backgroundColor=green&amp;viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
   </div>
   <!-- Carousel venue -->
@@ -221,7 +214,7 @@
         <div class="col-lg-6 mx-auto p-3 animate-in-down">
           <form class="p-4 bg-light" method="post" action="https://formspree.io/">
             <h4 class="mb-4 text-center">Customize your profile</h4>
-            <p class="my-4">Book your table in advance. No cue, no waiting lists. Pre-order your favourite dish or suggest new recipes to our chefs. We will do all our best for complying to your requests</p>
+            <p class="my-4" style="">Would you like to take a break? Choose Visibility OFF. Only interested in talking to exchange students? Click the Filter button [ON]. Want to add or adjust your profile picture? Just drag &amp; drop the attachment.<br></p>
             <div class="form-group"> <label>Visibility</label>
               <p>
               </p>
@@ -253,7 +246,7 @@
             </div>
             <div class="row">
               <div class="col-lg-4 col-md-6 p-4 text-center"> <i class="d-block fa fa-amazon mb-2 text-muted fa-3x"></i>
-                <p class="mb-3"> <i>"Would have never that much fun in Taiwan if I haven't met Marie. She told me all must-go places and ways to get around. Therefore, I could not only save time for doing my research but also found a great person!"</i> </p>
+                <p class="mb-3"> <i>"Would have never had that much fun in Taiwan if I haven't met Marie. She told me all must-go places and ways to get around. Therefore, I could not only save time for doing my research but also found a great person!"</i> </p>
                 <p class="mb-1"> <b>J. W. Goethe</b> </p>
                 <p class="mb-0">Exchange student</p>
               </div>
@@ -287,11 +280,11 @@
   <script src="js/smooth-scroll.js"></script>
   <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-  <script>
+  <script style="">
     // Create variable to hold map element, give initial settings to map
     var map = L.map('map', {
       center: [22.4185, 114.2041],
-      zoom: 15
+      zoom: 16
     });
     // Add OpenStreetMap tile layer to map element
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -299,6 +292,54 @@
     }).addTo(map);
     // Create point feature for Kendall Square T Station
     var myDataPoint = L.marker([22.4185, 114.2041]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.419429, 114.205102]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.419727, 114.205531]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.419578, 114.205949]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.418393, 114.205397]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.418552, 114.204882]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.418661, 114.206330]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.418552, 114.206351]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.420697, 114.208822]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.420677, 114.209056]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.417908, 114.210517]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.417848, 114.210639]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.415249, 114.208096]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.415041, 114.208128]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.413613, 114.209834]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.413573, 114.209705]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.414237, 114.210070]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.414683, 114.210295]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.414683, 114.210295]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.415853, 114.211239]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.416309, 114.210842]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.425185, 114.206164]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.425195, 114.206636]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.422599, 114.204309]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.422321, 114.204030]).addTo(map);
   </script>
 </body>
 

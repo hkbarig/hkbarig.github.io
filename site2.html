@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129654046-1"></script>
   <script> window.dataLayer = window.dataLayer || [];
@@ -15,6 +16,8 @@
   <!-- PAGE settings -->
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
   <title>BÄRIG</title>
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
   <meta name="description" content="Free Bootstrap 4 Pingendo Aquamarine template for restaurant and food">
   <meta name="keywords" content="Pingendo restaurant food aquamarine free template bootstrap 4">
   <!-- CSS dependencies -->
@@ -53,13 +56,36 @@
   <div class="align-items-center d-flex cover section-aquamarine py-5" style="background-image: url(&quot;assets/restaurant/cover_light.jpg&quot;);" id="home">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7 align-self-center text-lg-left text-center">
-          <h1 class="mb-0 mt-5 display-4">B Ä R I G</h1>
-          <p class="mb-5">Brings together mutual interests</p>
+        <div class="col-md-8">
+          <div class="col-lg-7 align-self-center text-lg-left text-center">
+            <h1 class="mb-0 mt-5 display-4">B Ä R I G</h1>
+            <p class="mb-5">Brings together mutual interests</p>
+            <div class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" id="map" style="width: 555px; height: 375px; position: relative; outline: none;" tabindex="0">
+              <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
+                <div class="leaflet-pane leaflet-tile-pane"></div>
+                <div class="leaflet-pane leaflet-shadow-pane"></div>
+                <div class="leaflet-pane leaflet-overlay-pane"></div>
+                <div class="leaflet-pane leaflet-marker-pane"></div>
+                <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                <div class="leaflet-pane leaflet-popup-pane"></div>
+                <div class="leaflet-proxy leaflet-zoom-animated"></div>
+              </div>
+              <div class="leaflet-control-container">
+                <div class="leaflet-top leaflet-left">
+                  <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">-</a></div>
+                </div>
+                <div class="leaflet-top leaflet-right"></div>
+                <div class="leaflet-bottom leaflet-left"></div>
+                <div class="leaflet-bottom leaflet-right">
+                  <div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="p-3 col-lg-5" style="	text-shadow: 0px 0px 4px black;">
-          <iframe class="airtable-embed" src="https://airtable.com/embed/shrwBJaVex80lzWCH?backgroundColor=green&amp;viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-          <button type="submit" class="btn mt-4 btn-block p-2 btn-primary"><b>BREAK THE ICE</b></button>
+        <div class="col-md-4">
+          <iframe class="airtable-embed" src="https://airtable.com/embed/shrwBJaVex80lzWCH?backgroundColor=green&amp;viewControls=on" frameborder="0" onmousewheel="" width="100%" style="background: transparent; border: 1px solid #ccc;" height="523"></iframe>
+          <button type="submit" class="btn mt-4 btn-block p-2 btn-primary"><b>Break the Ice</b></button>
         </div>
       </div>
     </div>
@@ -152,7 +178,7 @@
         <div class="col-lg-6 mx-auto p-3 animate-in-down">
           <form class="p-4 bg-light" method="post" action="https://formspree.io/">
             <h4 class="mb-4 text-center">Customize your profile</h4>
-            <p class="my-4">Book your table in advance. No cue, no waiting lists. Pre-order your favourite dish or suggest new recipes to our chefs. We will do all our best for complying to your requests</p>
+            <p class="my-4">Would you like to take a break? Choose Visibility OFF. Only interested in talking to exchange students? Click the Filter button [ON]. Want to add or adjust your profile picture? Just drag &amp; drop the attachment.</p>
             <div class="form-group"> <label>Visibility</label>
               <p>
               </p>
@@ -217,6 +243,80 @@
   <!-- Script: Smooth scrolling between anchors in the same page -->
   <script src="js/smooth-scroll.js"></script>
   <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+  <!-- Add the Leaflet JavaScript library -->
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script>
+    // Create variable to hold map element, give initial settings to map
+    var map = L.map('map', {
+      center: [22.419553, 114.205417],
+      zoom: 25
+    });
+    // Add OpenStreetMap tile layer to map element
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.419595, 114.205656]).addTo(map);
+    // Bind popup to data point object
+    myDataPoint.bindPopup("<h3>You are here</h3>");
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.419429, 114.205102]).addTo(map);
+    // Bind popup to data point object
+    myDataPoint.bindPopup("<h3>This is Marie</h3>");
+    // Create line feature for Mass Ave Bridge, style and add to map
+    var myDataLine = L.polyline([
+      [22.419595, 114.205656],
+      [22.419429, 114.205102]
+    ], {
+      color: 'red',
+      weight: 10
+    }).addTo(map);
+    var myDataPoint = L.marker([22.419727, 114.205531]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.419578, 114.205949]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.418393, 114.205397]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.418552, 114.204882]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.418661, 114.206330]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.418552, 114.206351]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.420697, 114.208822]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.420677, 114.209056]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.417908, 114.210517]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.417848, 114.210639]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.415249, 114.208096]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.415041, 114.208128]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.413613, 114.209834]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.413573, 114.209705]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.414237, 114.210070]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.414683, 114.210295]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.414683, 114.210295]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.415853, 114.211239]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.416309, 114.210842]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.425185, 114.206164]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.425195, 114.206636]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.422599, 114.204309]).addTo(map);
+    // Create point feature for Kendall Square T Station
+    var myDataPoint = L.marker([22.422321, 114.204030]).addTo(map);
+  </script>
 </body>
 
 </html>
