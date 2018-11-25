@@ -244,7 +244,7 @@
   <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
   <!-- Add the Leaflet JavaScript library -->
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-  <script>
+  <script style="">
     // Create variable to hold map element, give initial settings to map
     var map = L.map('map', {
       center: [22.419553, 114.205417],
@@ -261,7 +261,7 @@
     // Create point feature for Kendall Square T Station
     var myDataPoint = L.marker([22.419429, 114.205102]).addTo(map);
     // Bind popup to data point object
-    myDataPoint.bindPopup("<h3>This is Marie</h3>");
+    myDataPoint.bindPopup("<h3>This is Tobi</h3>");
     // Create line feature for Mass Ave Bridge, style and add to map
     var myDataLine = L.polyline([
       [22.419595, 114.205656],
