@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129654046-1"></script>
   <script> window.dataLayer = window.dataLayer || [];
@@ -15,7 +16,7 @@
   <!-- PAGE settings -->
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
   <title>BÄRIG</title>
-  <meta charset="utf-8">
+  <!-- External Stylesheets -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
   <meta name="description" content="Free Bootstrap 4 Pingendo Aquamarine template for restaurant and food">
   <meta name="keywords" content="Pingendo restaurant food aquamarine free template bootstrap 4">
@@ -26,25 +27,17 @@
   <script src="js/navbar-ontop.js"></script>
   <!-- Script: Animated entrance -->
   <script src="js/animate-in.js"></script>
-  <!-- leaflets-->
 </head>
 
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top" style="">
     <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="true" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="true" aria-label="Toggle navigation" style=""> <span class="navbar-toggler-icon"></span> </button>
       <div class="navbar-collapse text-center justify-content-center collapse show" id="navbar3SupportedContent" style="">
         <ul class="navbar-nav">
           <li class="nav-item mx-3">
-            <a class="nav-link text-light" href="#home"><b>HOME</b></a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#nearby"><b>NEARBY</b></a>
-          </li>
-          <li class="nav-item mx-2"> <a class="nav-link show disabled text-dark" href="#chat" data-target="#tabone" data-toggle="pill"><i class="fa fa-lg fa-envelope-open text-light"></i><b> </b></a> </li>
-          <li class="nav-item mx-2">
-            <a href="#calendar" class="nav-link"><b>CALENDAR</b></a>
+            <a class="nav-link text-light" href="home.html"><b>HOME</b></a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="#buddies"><i class="fa fa-user fa-fw"></i><b>BUDDIES</b></a>
@@ -58,32 +51,18 @@
     </div>
   </nav>
   <!-- Cover -->
-  <!-- Intro -->
-  <div class="py-5 text-center text-primary" style="background-image: url(&quot;assets/restaurant/cover_light_3.jpg&quot;);" id="location">
-    <h2> Zoom in &amp; out </h2>
-    <p>
-    </p>
-    <h5> Click on a marker and see his/her profile </h5>
-    <a class="btn btn-outline-light w-100" href="site2.html">
-      <div id="map" style="width: 705px; height: 775px" class="text-center w-100"></div>
-    </a>
-  </div>
-  <div class="py-5">
+  <div class="align-items-center d-flex cover section-aquamarine py-5" style="background-image: url(&quot;assets/restaurant/cover_light.jpg&quot;);" id="home">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="text-primary text-center" contenteditable="true">Bärige people next to you</h2>
+          <div class="align-self-center text-lg-left text-center">
+            <h1 class="mb-0 mt-5 display-4">B Ä R I G Instant Messenger</h1>
+            <p class="mb-5">Brings together mutual interests </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Gallery -->
-  <div class="">
-    <div class="container-fluid h-100" id="nearby">
-      <iframe class="airtable-embed" src="https://airtable.com/embed/shrEkrWgzWUSuezk1?backgroundColor=green&amp;viewControls=on" frameborder="0" onmousewheel="" width="100%" height="1033" style="background: transparent; border: 1px solid #ccc;"></iframe>
-    </div>
-  </div>
-  <!-- Menu -->
   <div class="py-5 text-center" id="chat" style="background-image: url(&quot;assets/restaurant/cover_light_4.jpg&quot;);">
     <div class="container">
       <div class="row p-4 bg-aquamarine animate-in-down">
@@ -92,6 +71,14 @@
           <p class="mb-5">Week #26</p>
           <div class="row">
             <div class="col-md-12" style="">
+              <h3 class="">Start a new topic!&nbsp;<span class="badge badge-light">New</span></h3>
+              <form class="">
+                <div class="form-group"> <label></label> <input type="email" class="form-control" placeholder="Enter your message" style=""> <small class="form-text text-muted"></small> </div>
+                <div class="form-group">
+                  <div class="form-group"><label></label></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
               <h5>For the youngest</h5>
               <div class="list-group pi-draggable" draggable="true">
                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
@@ -133,30 +120,24 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="col-md-12">
-                <div class="col-md-12 m-0 my-3"><a class="btn btn-primary text-center text-uppercase shadow-sm" href="messages.html" style="	box-shadow: 0px 0px 4px  black;">Start a new message now!</a></div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- Intro -->
+  <!-- intro-2 -->
+  <!-- Gallery -->
+  <!-- Menu -->
   <!-- Carousel reviews -->
-  <div class="py-5 text-center photo-overlay" id="calendar" style="background-image: url(&quot;assets/restaurant/testimonal_background_light.jpg&quot;);">
-    <iframe class="airtable-embed" src="https://airtable.com/embed/shrEApZpq4nPw7Faq?backgroundColor=green&amp;viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-  </div>
   <!-- Carousel venue -->
-  <div class="py-5" id="buddies" style="background-image: url(&quot;assets/restaurant/cover_light_2.jpg&quot;);">
+  <div class="py-5" style="background-image: url(&quot;assets/restaurant/cover_light_2.jpg&quot;);" id="buddies">
     <div class="container">
       <div class="row bg-primary animate-in-down">
         <div class="p-4 col-md-6 align-self-center">
           <p class="m-0">Start engaging</p>
           <h2>Discover your exchange </h2>
           <p class="my-4">Unlock your potential. Diving into other cultures has never been quicker and easier. Broaden your mind and start building precious friendships.</p>
-          <a href="#" class="btn mb-3 p-2 btn-light">View your buddies</a>
+          <a href="https://airtable.com/shrEkrWgzWUSuezk1/tblv30QIngHuLaedc" class="btn mb-3 p-2 btn-light">View your buddies</a>
         </div>
         <div class="p-0 col-md-6">
           <div class="carousel slide" data-ride="carousel" id="carousel1">
@@ -231,7 +212,7 @@
         <div class="col-lg-6 mx-auto p-3 animate-in-down">
           <form class="p-4 bg-light" method="post" action="https://formspree.io/">
             <h4 class="mb-4 text-center">Customize your profile</h4>
-            <p class="my-4" style="">Would you like to take a break? Choose Visibility OFF. Only interested in talking to exchange students? Click the Filter button [ON]. Want to add or adjust your profile picture? Just drag &amp; drop the attachment.<br></p>
+            <p class="my-4">Would you like to take a break? Choose Visibility OFF. Only interested in talking to exchange students? Click the Filter button [ON]. Want to add or adjust your profile picture? Just drag &amp; drop the attachment.</p>
             <div class="form-group"> <label>Visibility</label>
               <p>
               </p>
@@ -262,17 +243,17 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-4 col-md-6 p-4 text-center"> <i src="logo (1)/logo/logo.jpg" class="img-fluid d-block rounded-circle"><img class="img-fluid d-block rounded-circle" src="logo (1)/logo/logo.jpg"></i>
-                <p class="mb-3"> <i>"Would have never had that much fun in Taiwan if I haven't met Marie. She told me all must-go places and ways to get around. Therefore, I could not only save time for doing my research but also found a great person!"</i> </p>
+              <div class="col-lg-4 col-md-6 p-4 text-center"> <i class="d-block fa fa-amazon mb-2 text-muted fa-3x"></i>
+                <p class="mb-3"> <i>"Would have never that much fun in Taiwan if I haven't met Marie. She told me all must-go places and ways to get around. Therefore, I could not only save time for doing my research but also found a great person!"</i> </p>
                 <p class="mb-1"> <b>J. W. Goethe</b> </p>
                 <p class="mb-0">Exchange student</p>
               </div>
-              <div class="col-lg-4 col-md-6 p-4 text-center"> <i src="logo (1)/logo/logo.jpg" class="img-fluid d-block rounded-circle"><img class="img-fluid d-block rounded-circle" src="logo (1)/logo/logo.jpg"></i>
+              <div class="col-lg-4 col-md-6 p-4 text-center"> <i class="d-block fa fa-paypal mb-2 text-muted fa-3x"></i>
                 <p class="mb-3"> <i>"Waiting time has never passed that quickly. Thank's to BÄRIG I now know quite a few local restaurants in Hongkong."</i> </p>
                 <p class="mb-1"> <b>G. W. John</b> </p>
                 <p class="mb-0">Exchange student</p>
               </div>
-              <div class="col-lg-4 p-4 text-center"> <i src="logo (1)/logo/logo.jpg" class="img-fluid d-block rounded-circle"><img class="img-fluid d-block rounded-circle" src="logo (1)/logo/logo.jpg"></i>
+              <div class="col-lg-4 p-4 text-center"> <i class="d-block fa fa-maxcdn mb-2 text-muted fa-3x"></i>
                 <p class="mb-3"> <i>"It doesn't matter whether I am waiting for the bus or at the canteen, I can now easily break the ice with exchange students by sharing mutual interests."</i> </p>
                 <p class="mb-1">
                   <b>J. G. Wolf</b> </p>
@@ -292,26 +273,38 @@
   <!-- JavaScript dependencies -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <!-- Script: Smooth scrolling between anchors in the same page -->
   <script src="js/smooth-scroll.js"></script>
   <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+  <!-- Add the Leaflet JavaScript library -->
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script style="">
     // Create variable to hold map element, give initial settings to map
     var map = L.map('map', {
-      center: [22.4185, 114.2041],
-      zoom: 16
+      center: [22.419553, 114.205417],
+      zoom: 25
     });
     // Add OpenStreetMap tile layer to map element
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap'
     }).addTo(map);
     // Create point feature for Kendall Square T Station
-    var myDataPoint = L.marker([22.4185, 114.2041]).addTo(map);
+    var myDataPoint = L.marker([22.419595, 114.205656]).addTo(map);
+    // Bind popup to data point object
+    myDataPoint.bindPopup("<h3>You are here</h3>");
     // Create point feature for Kendall Square T Station
     var myDataPoint = L.marker([22.419429, 114.205102]).addTo(map);
-    // Create point feature for Kendall Square T Station
+    // Bind popup to data point object
+    myDataPoint.bindPopup("<h3>This is Tobi</h3>");
+    // Create line feature for Mass Ave Bridge, style and add to map
+    var myDataLine = L.polyline([
+      [22.419595, 114.205656],
+      [22.419429, 114.205102]
+    ], {
+      color: 'red',
+      weight: 10
+    }).addTo(map);
     var myDataPoint = L.marker([22.419727, 114.205531]).addTo(map);
     // Create point feature for Kendall Square T Station
     var myDataPoint = L.marker([22.419578, 114.205949]).addTo(map);
